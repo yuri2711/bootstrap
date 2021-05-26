@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All peoples</title>
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+<div th:each="person:${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+</div>
+<H3>
+    <a href="/logout">EXIT!!!</a>
+</H3>
+</body>
+</html>
